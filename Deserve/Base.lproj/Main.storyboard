@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oxE-QC-ZVg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="zLx-q8-wqd">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="oxE-QC-ZVg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pRU-fH-Px8">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="y4q-uK-D6O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YqM-89-dBZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1195" y="56"/>
+        </scene>
+        <!--SplashVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SplashVC" customModule="Deserve" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESERVE DEMO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tza-6B-q09">
+                                <rect key="frame" x="100.5" y="433" width="213" height="30.5"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="24"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Tza-6B-q09" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qo0-mp-itV"/>
+                            <constraint firstItem="Tza-6B-q09" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xYl-Jk-JSF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GHJ-py-eAl"/>
+                    <connections>
+                        <segue destination="D3j-d1-nzu" kind="show" identifier="LaunchSegue" id="e6d-Er-pYV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-401" y="52"/>
+        </scene>
+        <!--Deserve DemoVC-->
+        <scene sceneID="fU3-ig-ncY">
+            <objects>
+                <viewController id="D3j-d1-nzu" customClass="DeserveDemoVC" customModule="Deserve" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="441-iS-lnZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hAk-lP-VZn">
+                                <rect key="frame" x="0.0" y="105" width="414" height="757"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QYg-Di-cm4">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="D3j-d1-nzu" id="5nx-W9-4Fp"/>
+                                    <outlet property="delegate" destination="D3j-d1-nzu" id="RV0-oR-0Jc"/>
+                                </connections>
+                            </collectionView>
+                            <searchBar contentMode="redraw" placeholder="Type your query here..." showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JTr-bu-tZu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <offsetWrapper key="searchTextPositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <outlet property="delegate" destination="D3j-d1-nzu" id="PbN-oL-9cb"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Tm-d2-uGf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hAk-lP-VZn" firstAttribute="leading" secondItem="8Tm-d2-uGf" secondAttribute="leading" id="Io6-d5-5BZ"/>
+                            <constraint firstItem="hAk-lP-VZn" firstAttribute="top" secondItem="JTr-bu-tZu" secondAttribute="bottom" constant="10" id="Ld2-kS-tvt"/>
+                            <constraint firstItem="8Tm-d2-uGf" firstAttribute="trailing" secondItem="hAk-lP-VZn" secondAttribute="trailing" id="WzD-aY-te4"/>
+                            <constraint firstItem="JTr-bu-tZu" firstAttribute="trailing" secondItem="8Tm-d2-uGf" secondAttribute="trailing" id="d0S-Qj-lvE"/>
+                            <constraint firstItem="JTr-bu-tZu" firstAttribute="leading" secondItem="8Tm-d2-uGf" secondAttribute="leading" id="jfp-Xs-lHJ"/>
+                            <constraint firstItem="8Tm-d2-uGf" firstAttribute="bottom" secondItem="hAk-lP-VZn" secondAttribute="bottom" id="oLe-LG-jXD"/>
+                            <constraint firstItem="JTr-bu-tZu" firstAttribute="top" secondItem="8Tm-d2-uGf" secondAttribute="top" id="xAh-qg-y7Z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="R7x-7b-gg7"/>
+                    <connections>
+                        <outlet property="collectionView" destination="hAk-lP-VZn" id="2eZ-f9-XfC"/>
+                        <outlet property="searchBar" destination="JTr-bu-tZu" id="scY-0o-iQd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kxc-lO-2cs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="382.60869565217394" y="51.5625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
